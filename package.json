@@ -1,0 +1,14 @@
+{
+  "name": "highking-page-with-sass",
+  "version": "1.0.0",
+  "description": "landing page with sass",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "author": "DeveroCode",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
