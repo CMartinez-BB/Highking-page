@@ -464,28 +464,48 @@ img{
 
         &__link {
             color: $c-red;
-            &:after {
-              content: '';
-              display: block;
-              width: 0;
-              height: 2px;
-              background: transparent;
-              transition: all 0.38s ease;
-            }
-            &:hover {
-              &:after {
+
+            @include breakpoint(desktop){
+                &:after {
                     content: '';
                     display: block;
-                    width: 7rem;
+                    width: 0;
                     height: 2px;
+                    background: transparent;
                     transition: all 0.38s ease;
-                    background: $c-red;
+                  }
+                  &:hover {
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 7rem;
+                        height: 2px;
+                        transition: all 0.38s ease;
+                        background: $c-red;
+                    }
                 }
             }
         }
     }
 
     &__explore-text{
-        background: pink;
+        text-align: center;
+        margin: 3.8rem 0 2.8rem;
+        padding: 0 1rem;
+
+        a{
+            color: $c-red;
+            font-weight: $fw-bold;
+            font-style: italic;
+
+            &:hover{
+                border-bottom: 0.2rem solid $c-red;
+            }
+        }
+
+        @include breakpoint(tablet){
+            margin: 7.6rem 0 5.6rem 0;
+            padding: 0;
+        }
     }
 }
