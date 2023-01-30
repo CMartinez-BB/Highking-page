@@ -196,7 +196,7 @@ img{
         background: none;
         color: $c-blue;
         border: 1px solid $c-blue;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         &:hover {
           background: $c-blue;
           border: 1px solid transparent;
@@ -371,10 +371,121 @@ img{
             margin-right: 2rem;
         }
 
-        @include breakpoint(tablet){
+        @include breakpoint(laptop){
             width: auto;
         }
     }
 
-    
+
+}
+
+// feature styles
+.features{
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(desktop){
+        margin-top: 18rem;
+    }
+
+    &__container{
+        padding: 6.6rem;
+        background: $c-white;
+        box-shadow: $c-shadow-1;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-evenly;
+
+        @include breakpoint(tablet){
+            gap: 8rem;
+        }
+
+        @include breakpoint(desktop){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .feature{
+        text-align: center;
+        margin-bottom: 4rem;
+        max-width: 26.8rem;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(laptop){
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        &__img{
+            width: 7.6rem;
+            height: 7.6rem;
+            margin: 0 auto 2.8rem auto;
+
+            @include breakpoint(laptop){
+                margin: 0 0 2.8rem 0;
+
+                // &:first-child{
+                //     margin-top: 2.8rem;
+                // }
+            }
+        }
+
+        &__subtitle{
+            margin-bottom: 1rem;
+        }
+
+        // &__link {
+        //     color: $c-red;
+        //     &::after{
+        //         content: '';
+        //         display: block;
+        //         width: 0;
+        //         height: 0.2rem;
+        //         background: transparent;
+        //         transition: all  0.38s ease;
+
+        //         &:hover{
+        //             &::after{
+        //                 content: '';
+        //                 width: 7rem;
+        //                 display: block;
+        //                 height: 0.2rem;
+        //                 transition: all 0.38s ease;
+        //                 background: $c-red;
+        //             }
+        //         }
+        //     }
+        // }
+
+        &__link {
+            color: $c-red;
+            &:after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 2px;
+              background: transparent;
+              transition: all 0.38s ease;
+            }
+            &:hover {
+              &:after {
+                    content: '';
+                    display: block;
+                    width: 7rem;
+                    height: 2px;
+                    transition: all 0.38s ease;
+                    background: $c-red;
+                }
+            }
+        }
+    }
+
+    &__explore-text{
+        background: pink;
+    }
 }
